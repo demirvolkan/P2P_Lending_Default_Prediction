@@ -280,3 +280,87 @@ The function in mathematical terms can be written as
   - Y = β1 + β2X + β3X2 +….+ βn+1Xn + ϵ
 where β1 is intercept and βN is regression coefficient. 
 ϵ is the error term, the part of Y the regression model is unable to explain.
+
+Dependent variable of the analysis is the Loan status. As it has mentioned above, the which 
+is a numerical variable that takes only two values: 0, Not default or 1, Default. Using the most 
+significant and not collinear regressors, the Loan status has predicted over them on training 
+data. The predictions are tested on test data and the predictions above 0.5 has accepted as 
+default. The accuracy over the predictions yielded over 90%.
+
+Linear regression has been applied with the variables of term, int_rate, emp_length, 
+inq_last_6mths, total_rec_int, total_rec_late_fee, recoveries, last_pymnt_amnt and fico_avg. 
+These variables have been chosen according to their rank of importance which derived from 
+first linear regression including all variables. 
+
+Receiving 90.27% overall accuracy result which can be considered as a good result. In 
+addition, sensitivity is a measure of model’s ability to predict true positives. This measure is 
+calculated as 90.29%. On the other hand, specificity measures the model’s capability of 
+predicting true negatives and this measure is calculated to be 98.20% for our model. It can be 
+stated that linear regression yields good results for our analysis. Finally, Area Under Curve 
+which indicates the performance of our model’s estimation is 89%. 
+
+
+##### 4.5. Random Forest
+
+Lastly, random forest has been applied in order to see if the results can be improved.
+Random forest is a technique which includes many decision trees. The decision trees are
+created with bagging from the original data set. With 23 input variables in our final data set, a
+number of n variables are selected at each node and this number is the same while creating
+random forest. The number of trees in our random forest model is selected as 500 by default.
+The most crucial point on this technique is to ensemble low correlated trees so that one tree’s
+error will not be seen in the other tree. Putting a great amount of effort in eliminating
+correlations within predictors at the data mining process, expectations are on obtaining a good
+result with random forest. The analysis will be using 23 variables which do not present a
+significant correlation in this part. Out of bag(OOB) error estimate is utilized for measuring the
+performance of random forest models. The main idea behind OOB is to leave out one third of
+bagged decision trees and use them as the test data. Other decision trees are considered as
+training data.
+
+When we created a random forest model, we obtained 500 trees with 4 variables at each
+split. Out of bag error rate is calculated as 4.69% which can be considered a low error rate. The
+outcome obtained has been expected , since the final variables are lowly correlated. The results
+table can be seen below.
+
+<img src="https://user-images.githubusercontent.com/89068333/165341437-9f6eacf8-a402-4f1e-a116-24250e9afdbd.PNG" width=70% height=70%>
+
+As it stated above, random forest models are expected to perform well with our data. We
+calculated 91.9% accuracy which can be considered as a good result. Moreover, sensitivity is a
+measure of random forest model’s ability to predict true positives. This measure is calculated as
+94.98%. On the other hand, specificity measures the model’s capability of predicting true
+negatives and this measure is calculated to be 99.22% for our model. It can be stated that
+random forest yields good results for our analysis.
+
+Random forest has been applied with its default parameters. The model yielded 500 trees
+and 4 number of variables tired at each split. The model brings 4.69% out of back estimate of
+error rate.
+
+#### 5. Conclusion
+
+Results:
+![results](https://user-images.githubusercontent.com/89068333/165341990-f9438534-800d-4c7d-b303-a1f4e8b76a3f.PNG)
+
+To conclude, although linear regression and random forest models yielded acceptable
+results, logistic regression model brought the best performance. In order to achieve successful
+results, Unnecessary and irrelevant variables are eliminated and correlations within the variables
+are analyzed. 98.9% overall accuracy result is calculated in logistic regression. Although this
+seems to be a flawless result, it raised some questions whether there may be too careful data cleaning or overfitting. Therefore, other machine learning tools, which are linear regression and
+random forest, are decided to be applied. Our linear regression model yielded 90.27% overall
+accuracy and finally our random forest model resulted with 91.90% overall accuracy rate. As a
+result, all of 3 machine learning tools yielded impressive results as being above 90%.
+
+To sum up, we observed that logistic regression models perform better than linear
+regression and random forest models in analyzing Peer to Peer Lending data and estimating
+default rates
+
+#### 6. References
+  1. Herzenstein, M., Andrews, R., Dholakia, U. et al. (2008) The democratization of personal
+consumer loans? Determinants of success in online peer-to-peer lending communities,Working
+Paper. Available at SSRN www.prosper.com.
+  2. Freedman, S., & Jin, G. Z. (2008). Do social networks solve information problems for peer-to-peer lending? Evidence from Prosper. com. NET Institute Working Paper no.08-43.
+https://doi.org/http://dx.doi.org/10.2139/ssrn.1304138
+  3. Puro, L., Teich, J.E., Wallenius, H., and Wallenius, J. (2010), “Borrower decision aid for people-to-people lending,” Decision Support Systems, Vol.49, pp. 52–60. DOI:
+10.1016/j.dss.2009.12.009
+  4. V.Kumar, N.Subramanyam, et al. (2016) Credit Risk Analysis in Peer-to-Peer Lending
+System, Conference: 2016 IEEE International Conference on Knowledge Engineering and
+Applications (ICKEA). DOI: 10.1109/ICKEA.2016.7803017
+
