@@ -1,5 +1,7 @@
 ### Predicting Peer-to-Peer Lending Systems Default Rate Prediction with Machine Learning
 
+**Data source: https://www.kaggle.com/datasets/wordsforthewise/lending-club**
+
 #### 1. Abstract
   
 This project will investigate the P2P Lending Default predictions. The Project
